@@ -4,13 +4,14 @@
   "private": true,
   "dependencies": {
     "@types/hammerjs": "^2.0.35",
+    "cross-env": "^5.0.5",
     "hammerjs": "^2.0.8",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-scripts-ts": "2.7.0"
   },
   "scripts": {
-    "start": "react-scripts-ts start",
+    "start": "cross-env PORT=3001 react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject"

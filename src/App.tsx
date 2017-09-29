@@ -13,7 +13,14 @@ class App extends React.Component {
   componentDidMount() {
     this.hammer = new Hammer(this.appElem!)
     this.hammer.on('panstart panmove', evt => {
-      this.sidebarElem!.style.transform = `translate3d(${evt.deltaX}px, 0, 0)`
+      
+      if (evt.deltaX <= 280 && evt.deltaX >= -280) {
+        this.sidebarElem!.style.transform = `translate3d(${evt.deltaX}px, 0, 0)`
+      }
+    })
+    this.hammer.on('panend', evt => {
+      
+      // this.sidebarElem!.style.transform = `translate3d(0, 0, 0)`
     })
   }
 
